@@ -1,0 +1,101 @@
+<!--Variety music-->
+<!DOCTYPE html>
+<html class="wide wow-animation" lang="en">
+
+<head>
+  <title>Events</title>
+  <meta name="format-detection" content="telephone=no">
+  <meta name="viewport"
+    content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8">
+  <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <!-- Stylesheets-->
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700,900">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha512-k78e1fbYs09TQTqG79SpJdV4yXq8dX6ocfP0bzQHReQSbEghnS6AQHE2BbZKns962YaqgQL16l7PkiiAHZYvXQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/style.css" id="main-styles-link">
+
+</head>
+
+<body>
+  <div class="preloader">
+    <div class="preloader-body">
+      <div class="cssload-container">
+        <div class="cssload-speeding-wheel"></div>
+      </div>
+      <p>Loading...</p>
+    </div>
+  </div>
+  <div class="page">
+    <!-- Page Header-->
+    <header class="section page-header">
+      {{>navbar}}
+    </header>
+    <!-- Breadcrumbs -->
+    <section class="section section-bredcrumbs" style="background: url(images/bg-1-1920x1000.jpg) no-repeat bottom">
+      <div class="container context-dark breadcrumb-wrapper text-left">
+        <h1>Events</h1>
+        <ul class="breadcrumbs-custom">
+          <li><a href="/home">Home</a></li>
+          <li class="active">Events</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-lg bg-gray-100">
+      <div class="container text-center">
+        <h2>My Registered Events</h2>
+
+        <div class="row row-30 row-offset-4 text-left">
+          {{#each eventData}}
+          {{#if this._id}}
+          <div class="col-md-6 col-lg-4 wow fadeInRight">
+            <article class="post-boxed">
+              <div class="post-meta">
+                <div class="post-meta-item">
+                  <div class="post-author"><span>by</span> <span>{{this.artist}}</span>
+                  </div>
+                </div>
+                <div class="post-meta-item">
+                  <div class="post-date">{{this.date}}</div>
+                </div>
+              </div>
+              <a class="media-wrapper" href="#">
+                <img src="https://source.unsplash.com/1600x900/?music" alt="" width="370" height="100" />
+              </a>
+              <div class="post-body">
+               
+                <h6 class="post-title"><a href="#">{{this.eventName}}</a></h6>
+                <p class="post-exeption">{{this.eventDesc}}</p>
+                <form action="/leaveSeat" method="post">
+                  <input type="text" value={{this._id}} style="display: none;" name="eventId">
+                  <button type="submit" class="btn btn-dark mt-3">Cancel</button>
+                  <p class="post-exeption" style="color: gray; font-size:x-small">Leave this event.</p>
+                </form>
+
+              </div>
+            </article>
+          </div>
+          {{/if}}
+          
+          {{/each}}
+        </div>
+
+    </section>
+    {{>footer}}
+
+  </div>
+
+  <!-- Javascript-->
+  <script src="js/core.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

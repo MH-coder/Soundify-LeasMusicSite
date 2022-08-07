@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/cdn-cgi/apps/head/3ts2ksMwXvKRuG480KNifJ2_JNM.js"></script>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Roboto:100,300,300i,400,700,900">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@mdi/font@6.5.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css" id="main-styles-link">
+
+    <!-- Bootstrap CSS-->
+    <link href="vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            /* color: white; */
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        .topnav a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+
+        .topnav .icon {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a:not(:first-child) {
+                display: none;
+            }
+
+            .topnav a.icon {
+                float: right;
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav.responsive {
+                position: relative;
+            }
+
+            .topnav.responsive .icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+        }
+    </style>
+
+    <title>Create New Post</title>
+</head>
+
+<body style="background-color: #343a40">
+
+    <div class="topnav" id="myTopnav">
+        <div class="rd-navbar-brand"><a class="brand" href=""><img class="brand-logo-dark"
+                    src="images/PicsArt_12-07-06.24.32.png" alt="" width="112" height="21" /><img
+                    class="brand-logo-light" src="images/PicsArt_12-07-06.24.32.png" alt="" width="150" height="10"
+                    style="margin-left: -20px;" /></a>
+        </div>
+        <a href="" class="" style="float: right;">ADMIN PANEL</a>
+    </div>
+
+    <div class="row justify-content-center">
+        <div class="col-auto">
+            <h1 style="color: white;">CREATE POST</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col p-5">
+            <div class="card">
+                <div class="card-header">
+                    <strong>Create new</strong> Event
+                </div>
+                <div class="card-body card-block">
+                    <form class="" action="/newPost" method="post">
+                        <!-- Event Name -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="eventName" class=" form-control-label">Event Name</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" id="eventName" name="eventName" placeholder="" class="form-control">
+                                <small class="form-text text-muted">Enter event name</small>
+                            </div>
+                        </div>
+
+                        <!-- Event Desc -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="eventDesc" class=" form-control-label">Event Description</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <textarea name="eventDesc" id="eventDesc" rows="9" placeholder="Description...."
+                                    class="form-control"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Artist name -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="artistName" class=" form-control-label">Artist Name</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" id="artistName" name="artistName" placeholder=""
+                                    class="form-control">
+                                <small class="form-text text-muted">Enter Artist name</small>
+                            </div>
+                        </div>
+
+                        <!-- Date -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="eventDate" class=" form-control-label">Date</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <input type="text" id="eventDate" name="eventDate" placeholder="" class="form-control">
+                                <small class="form-text text-muted">Enter date of event</small>
+                            </div>
+                        </div>
+
+                        <!-- Status -->
+                        <div class="row form-group">
+                            <div class="col col-md-3">
+                                <label for="status" class=" form-control-label">Event Status</label>
+                            </div>
+                            <div class="col-12 col-md-9">
+                                <select name="status" id="status" class="form-control">
+                                    <option value="0" disabled>Please select</option>
+                                    <option value="active">Active</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-sm">
+                            <i class="fa fa-dot-circle-o"></i> Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+    </script>
+    <script src="js/core.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
